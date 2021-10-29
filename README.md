@@ -1,4 +1,4 @@
-[![Docker Image CI](https://github.com/Dofamin/Uptime-Kuma-Docker/actions/workflows/docker-image.yml/badge.svg)](https://github.com/Dofamin/Uptime-Kuma-Docker/actions/workflows/docker-image.yml)
+[![Docker Image CI](https://github.com/Dofamin/Uptime-Kuma-Docker/actions/workflows/docker-image.yml/badge.svg?branch=master)](https://github.com/Dofamin/Uptime-Kuma-Docker/actions/workflows/docker-image.yml)
 ## Uptime Kuma-Docker
 
 It is a self-hosted monitoring tool like "Uptime Robot".
