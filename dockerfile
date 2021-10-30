@@ -24,6 +24,8 @@ RUN apt -y update > /dev/null 2>&1;\
 # # Start installer    
 RUN npm run setup > /dev/null 2>&1;\
     npm install --legacy-peer-deps && node node_modules/esbuild/install.js && npm run build && npm prune > /dev/null 2>&1
+# Cleanup
+RUN apt -y clean > /dev/null 2>&1;
 # Volume
 VOLUME [ "/srv/uptime-kuma/data" ] 
 # HEALTHCHECK
