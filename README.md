@@ -40,7 +40,7 @@ docker create \
   -p 3001:3001 \
   --restart unless-stopped \
   --memory="200m" \
-  uptime-kuma-docker:master 
+  ghcr.io/dofamin/uptime-kuma-docker:master
 
 docker start Uptime_Kuma
 
