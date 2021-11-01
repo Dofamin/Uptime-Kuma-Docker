@@ -25,6 +25,29 @@ docker create \
 docker start Uptime_Kuma
 
 ```
+Or just pull from GitHub
+
+```shell
+git clone https://github.com/Dofamin/Uptime-Kuma-Docker.git /srv/Uptime_Kuma/
+
+docker pull ghcr.io/dofamin/uptime-kuma-docker:master
+
+docker rm --force Uptime_Kuma
+
+docker create \
+  --name=Uptime_Kuma \
+  -v /srv/Uptime_Kuma/container-image-root/data/:/srv/uptime-kuma/data/ \
+  -p 3001:3001 \
+  --restart unless-stopped \
+  --memory="200m" \
+  uptime-kuma-docker:master 
+
+docker start Uptime_Kuma
+
+```
+
+
+
 
 Browse to http://localhost:3001 after started.
 
