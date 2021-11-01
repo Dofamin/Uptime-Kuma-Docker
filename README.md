@@ -28,8 +28,6 @@ docker start Uptime_Kuma
 Or just pull from GitHub
 
 ```shell
-git clone https://github.com/Dofamin/Uptime-Kuma-Docker.git /srv/Uptime_Kuma/
-
 docker pull ghcr.io/dofamin/uptime-kuma-docker:master
 
 docker rm --force Uptime_Kuma
