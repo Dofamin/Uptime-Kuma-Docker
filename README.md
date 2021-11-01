@@ -16,7 +16,7 @@ docker rm --force Uptime_Kuma
 
 docker create \
   --name=Uptime_Kuma \
-  -v /srv/uptime-kuma/container-image-root/data/:/srv/uptime-kuma/data/\
+  -v /srv/Uptime_Kuma/container-image-root/data/:/srv/uptime-kuma/data/ \
   -p 3001:3001 \
   --restart unless-stopped \
   --memory="200m" \
