@@ -17,15 +17,15 @@ RUN apt -y update > /dev/null 2>&1;\
     curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - > /dev/null 2>&1;\
     apt -y install nodejs > /dev/null 2>&1;\
     npm install pm2 -g > /dev/null 2>&1;\
-    pm2 startup > /dev/null 2>&1;
+    pm2 startup > /dev/null 2>&1; \
 # Clone the repo:    
-RUN git clone https://github.com/louislam/uptime-kuma.git git  > /dev/null 2>&1; \
-    mv git/* . > /dev/null 2>&1;
+    git clone https://github.com/louislam/uptime-kuma.git git  > /dev/null 2>&1; \
+    mv git/* . > /dev/null 2>&1; \
 # Start installer    
-RUN npm run setup > /dev/null 2>&1; \
-    npm install --legacy-peer-deps && node node_modules/esbuild/install.js && npm run build && npm prune > /dev/null 2>&1
+    npm run setup > /dev/null 2>&1; \
+    npm install --legacy-peer-deps && node node_modules/esbuild/install.js && npm run build && npm prune > /dev/null 2>&1; \
 # Cleanup
-RUN apt -y clean > /dev/null 2>&1;
+    apt -y clean > /dev/null 2>&1;
 # Volume
 VOLUME [ "/srv/uptime-kuma/data" ] 
 # HEALTHCHECK
@@ -33,4 +33,4 @@ HEALTHCHECK --interval=60s --timeout=30s --start-period=300s CMD node extra/heal
 # Expose Ports:
 EXPOSE 3001
 # CMD
-CMD ["service ntp start", "/usr/bin/node",  "server/server.js"]
+CMD ["service ntp start;", "/usr/bin/node",  "server/server.js"]
