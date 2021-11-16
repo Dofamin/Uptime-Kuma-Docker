@@ -33,4 +33,4 @@ HEALTHCHECK --interval=60s --timeout=30s --start-period=300s CMD node extra/heal
 # Expose Ports:
 EXPOSE 3001
 # CMD
-CMD ["/usr/bin/node",  "/bin/bash -c service ntp start && server/server.js"]
+CMD ["service ntp start &&", "/usr/bin/node",  "server/server.js"]
