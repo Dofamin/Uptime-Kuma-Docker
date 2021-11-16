@@ -26,8 +26,6 @@ RUN apt -y update > /dev/null 2>&1;\
     npm install --legacy-peer-deps && node node_modules/esbuild/install.js && npm run build && npm prune > /dev/null 2>&1; \
 # Cleanup
     apt -y clean > /dev/null 2>&1;
-# Volume
-VOLUME [ "/srv/uptime-kuma/data" ] 
 # HEALTHCHECK
 HEALTHCHECK --interval=60s --timeout=30s --start-period=300s CMD node extra/healthcheck.js
 # Expose Ports:
