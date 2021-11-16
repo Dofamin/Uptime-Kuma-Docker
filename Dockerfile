@@ -13,7 +13,7 @@ RUN apt -y update > /dev/null 2>&1;\
     ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone > /dev/null 2>&1;\
     dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1;\
 # Install dependencies, you would need common set of tools.
-    apt -y install git curl git npm > /dev/null 2>&1;\
+RUN apt -y install git curl git npm ntp> /dev/null 2>&1;\
     curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - > /dev/null 2>&1;\
     apt -y install nodejs > /dev/null 2>&1;\
     npm install pm2 -g > /dev/null 2>&1;\
@@ -33,4 +33,4 @@ HEALTHCHECK --interval=60s --timeout=30s --start-period=300s CMD node extra/heal
 # Expose Ports:
 EXPOSE 3001
 # CMD
-CMD ["/usr/bin/node",  "server/server.js"]
+CMD ["/usr/bin/node",  "service ntp start && server/server.js"]
