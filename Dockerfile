@@ -17,9 +17,9 @@ RUN apt -y update > /dev/null 2>&1;\
     curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - > /dev/null 2>&1;\
     apt -y install nodejs > /dev/null 2>&1;\
     npm install pm2 -g > /dev/null 2>&1;\
-    pm2 startup > /dev/null 2>&1;\
+    pm2 startup > /dev/null 2>&1;
 # Clone the repo:    
-    git clone https://github.com/louislam/uptime-kuma.git git  > /dev/null 2>&1; \
+RUN git clone https://github.com/louislam/uptime-kuma.git git  > /dev/null 2>&1; \
     mv git/* . > /dev/null 2>&1;
 # Start installer    
 RUN npm run setup > /dev/null 2>&1; \
