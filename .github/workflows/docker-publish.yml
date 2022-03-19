@@ -14,10 +14,6 @@ on:
     tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ master ]
-permissions:
-  run: |
-curl -XPOST -u "${{ secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/louislam/uptime-kuma/dispatches --data '{"event_type": "build_application"}'
-  
 
 env:
   # Use docker.io for Docker Hub if empty
